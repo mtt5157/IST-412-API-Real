@@ -5,10 +5,13 @@
  */
 package ChallenegeMode;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author matthewtucker
+ *
  */
-public class ChallengeView {
+public class ChallengeView extends JPanel {
     
 }
