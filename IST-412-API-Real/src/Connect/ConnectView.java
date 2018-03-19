@@ -5,11 +5,13 @@
  */
 package Connect;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author morganradic
  */
-public class ConnectView
+public class ConnectView extends JPanel
 {
     
 }

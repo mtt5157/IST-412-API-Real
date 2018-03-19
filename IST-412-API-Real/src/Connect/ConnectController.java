@@ -8,14 +8,26 @@ package Connect;
 /**
  *
  * @author morganradic
+ * This class is responsible for handling the connection between the snowboard and the application.  It will connect to the snowboard and also return the battery status.
  */
 public class ConnectController
 {
     private boolean connected;
     private ConnectModel model;
     
+    public ConnectController()
+    {
+        
+    }
+    
     // This method will return the battery status of the board
     public void getBatteryStatus()
+    {
+        
+    }
+    
+    //This method will be used to connect to the board
+    public void connectSnowboard()
     {
         
     }
