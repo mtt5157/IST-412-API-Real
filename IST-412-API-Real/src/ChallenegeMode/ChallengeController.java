@@ -33,9 +33,9 @@ public class ChallengeController {
     }
     
     /**
-     * 
-     * @return 
      * This method compares the challenge requirements with the run data to determine if the challenge has been completed
+     * @return 
+     * Boolean
      */
     public boolean isChallengeCompleted(){
         return this.challengeCompleted;
