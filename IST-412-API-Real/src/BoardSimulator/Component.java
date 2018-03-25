@@ -72,8 +72,9 @@ public class Component {
     } 
     
     public double[] getGyroscopeData(){
-        double[] gyroscopeData = new double[3];
-        
+       double[] gyroscopeData = new double[3];
+       Random r = new Random();
+       
        double xMin = -4;
        double xMax = 0;
        double yMin = -10;
