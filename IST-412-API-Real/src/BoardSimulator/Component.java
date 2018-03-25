@@ -11,6 +11,7 @@ import java.util.Random;
 /**
  *
  * @author matthewtucker
+ * This class is to identify the sensors that are working on the board, get the information from each sensor, encapsulate it, and then send it back to view
  */
 public class Component {
     private ArrayList<Device> Available = new ArrayList<Device> ();
@@ -25,12 +26,19 @@ public class Component {
       Available.add(ble3);
       
     }
-    
+    /**
+     * This method will look for the connected devices within the board and return them
+     * @return 
+     */
     public ArrayList<Device> getAvailableDevices(){
     
       return Available;        
     }
-    
+    /**
+     * This method is to know if the available devices are connected or not
+     * @param deviceName
+     * @return 
+     */
     public boolean connect(String deviceName){
         Boolean connected = false;
         for(int i = 0; i<Available.size(); i++){
@@ -40,7 +48,10 @@ public class Component {
         }
         return connected;
     }
-    
+    /**
+     * This method gets the temperature data from the device and returns it
+     * @return 
+     */
     public double getTemperature(){
        Random r = new Random();
        double tempMin = -20;
@@ -48,7 +59,10 @@ public class Component {
        double temp = tempMin +(tempMax - tempMin) * r.nextDouble();
        return temp;
     }
-    
+    /**
+     * This method gets the accelerometer data from the device, calculates it and returns it
+     * @return 
+     */
     public double[] getAccelerometerData(){
        double[] accelerometerData = new double[3];
        Random r = new Random();
@@ -70,7 +84,10 @@ public class Component {
        
        return accelerometerData;
     } 
-    
+    /**
+     * This method gets the gyroscope data, calculates it and returns it
+     * @return 
+     */
     public double[] getGyroscopeData(){
        double[] gyroscopeData = new double[3];
        Random r = new Random();
@@ -93,7 +110,10 @@ public class Component {
        
        return gyroscopeData;
     }
-    
+    /**
+     * This method encapsulates all of the data taken from the devices into a single packet and returns it
+     * @return 
+     */
     public Packet getDataAsPacket(){
         return new Packet(getAccelerometerData(), getGyroscopeData(), getTemperature());
     }
