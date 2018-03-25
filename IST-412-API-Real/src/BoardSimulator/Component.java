@@ -41,6 +41,7 @@ public class Component {
      */
     public boolean connect(String deviceName){
         Boolean connected = false;
+        //checks the list of available devices for the selected device
         for(int i = 0; i<Available.size(); i++){
             if(Available.get(i).getDeviceName().equals(deviceName)){
                 connected = true;
@@ -53,6 +54,7 @@ public class Component {
      * @return 
      */
     public double getTemperature(){
+       //generates a random temperature between -20 degrees and 40 degrees fahrenheit
        Random r = new Random();
        double tempMin = -20;
        double tempMax = 40;
@@ -64,6 +66,7 @@ public class Component {
      * @return 
      */
     public double[] getAccelerometerData(){
+       //generates random doubles for the x, y, and z coordinates of the accelerometer. The min and max ranges were determined by using the values from the powerpoint presented by Qortek. This method generates numbers in a similar range
        double[] accelerometerData = new double[3];
        Random r = new Random();
        double xMin = 0;
@@ -73,12 +76,15 @@ public class Component {
        double zMin = 0;
        double zMax = 1;
        
+       //generating random x
        double sampleX = xMin+(xMax-xMin)*r.nextDouble();
        accelerometerData[0]=sampleX;
        
+       //generating random y
        double sampleY = yMin +(yMax - yMin)* r.nextDouble();
        accelerometerData[1] = sampleY;
        
+       //generating random z
        double sampleZ = zMin +(zMax - zMin)* r.nextDouble();
        accelerometerData[2] = sampleZ;
        
@@ -89,6 +95,7 @@ public class Component {
      * @return 
      */
     public double[] getGyroscopeData(){
+       //generates random doubles for the x, y, and z coordinates of the gyroscope. The min and max ranges were determined by using the values from the powerpoint presented by Qortek. This method generates numbers in a similar range 
        double[] gyroscopeData = new double[3];
        Random r = new Random();
        
@@ -99,12 +106,15 @@ public class Component {
        double zMin = -11;
        double zMax = 0;
        
+       //generating random x
        double sampleX = xMin+(xMax-xMin)*r.nextDouble();
        gyroscopeData[0]=sampleX;
        
+       //generating random y
        double sampleY = yMin +(yMax - yMin)* r.nextDouble();
        gyroscopeData[1] = sampleY;
        
+       //generating random z
        double sampleZ = zMin +(zMax - zMin)* r.nextDouble();
        gyroscopeData[2] = sampleZ;
        
